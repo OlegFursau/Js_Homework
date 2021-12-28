@@ -1,0 +1,48 @@
+.navBar {
+    margin: 40px auto;
+    padding: 0 50px;
+}
+
+.navBar__link {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    text-decoration: none;
+    list-style: none;
+}
+
+li {
+    cursor: pointer;
+}
+
+li h2 {
+    text-transform: uppercase;
+    padding-bottom: 5px;
+}
+
+li h2:hover {
+    border-bottom: 2px solid black;
+    transition: .1s linear;
+}
+
+.list {
+    display: none;
+    background-color: gray;
+    text-align: center;
+    padding: 20px 40px;
+}
+
+.list__choose {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.list_v {
+    display: block;
+}
