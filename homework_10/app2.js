@@ -47,51 +47,51 @@ tigr.feed().stoke()
 
 // //     Протестировать работу функции можно на таком примере:
 
-// var initialObj = {
-//     string: 'Vasya',
-//     number: 30,
-//     boolean: true,
-//     undefined: undefined,
-//     null: null,
-//     array: [1, 2, 3],
-//     object: {
-//         string2: 'Petrov',
-//         object2: {
-//             array2: [{}, {}]
-//         },
-//         object3: {}
-//     },
-//     method: function() {
-//         alert('Hello');
-//     }
-// };
+var initialObj = {
+    string: 'Vasya',
+    number: 30,
+    boolean: true,
+    undefined: undefined,
+    null: null,
+    array: [1, 2, 3],
+    object: {
+        string2: 'Petrov',
+        object2: {
+            array2: [{}, {}]
+        },
+        object3: {}
+    },
+    method: function() {
+        alert('Hello');
+    }
+};
 
 
 
-// function deepClone(obj) {
-//     if (obj === null) return null;
+function deepClone(obj) {
+    if (obj === null) return null;
 
-//     var clone = {};
-//     for (var i in obj) {
-//         if (Array.isArray(obj[i])) {
-//             clone[i] = deepClone(obj[i]);
-//             continue;
-//         }
-//         clone[i] = obj[i];
-//     }
-//     return clone
-// }
+    var clone = {};
+    for (var i in obj) {
+        if (Array.isArray(obj[i])) {
+            clone[i] = deepClone(obj[i]);
+            continue;
+        }
+        clone[i] = obj[i];
+    }
+    return clone
+}
 
-// var clonedObj = deepClone(initialObj);
+var clonedObj = deepClone(initialObj);
 
 
-// clonedObj.object.object2.array2[1].name = 'Vasya';
-// initialObj.array.push(1);
+clonedObj.object.object2.array2[1].name = 'Vasya';
+initialObj.array.push(1);
 
-// initialObj.number = 40;
+initialObj.number = 40;
 
-// console.log(initialObj);
-// console.log(clonedObj);
+console.log(initialObj);
+console.log(clonedObj);
 
 
 
@@ -101,72 +101,72 @@ tigr.feed().stoke()
 
 
 
-// function getDeepEqual(obj) {
-//     return Object.prototype.toString.call(obj);
+function getDeepEqual(obj) {
+    return Object.prototype.toString.call(obj);
 
-// }
+}
 
-// function deepEqual(a, b) {
-//     if (a === b) return true;
-//     if (typeof(a) != typeof(b)) return false;
-//     var aDeep = getDeepEqual(a);
-//     var bDeep = getDeepEqual(b);
-//     if (aDeep != bDeep) return false;
-//     if (aDeep == '[object Boolean]' || aDeep == '[object String]' || aDeep == '[object Number]') {
-//         if (a.valueOf() != b.valueOf()) return false
-//     }
-//     if (aDeep == '[object RegExp]' || aDeep == '[object Date]' || aDeep == '[object Error]') {
-//         if (a.toString() != b.toString()) return false;
-//     }
-//     if (aDeep == '[object Function]' && a.toString() != b.toString()) return false;
-//     var aKeys = Object.keys(a);
-//     var bKeys = Object.keys(b);
-//     if (aKeys.length != bKeys.length) return false;
-//     if (!aKeys.every(function(key) { return b.hasOwnProperty(key) })) return false;
-//     return aKeys.every(function(key) {
-//         return deepEqual(a[key], b[key])
-//     });
-
-
-
-// }
+function deepEqual(a, b) {
+    if (a === b) return true;
+    if (typeof(a) != typeof(b)) return false;
+    var aDeep = getDeepEqual(a);
+    var bDeep = getDeepEqual(b);
+    if (aDeep != bDeep) return false;
+    if (aDeep == '[object Boolean]' || aDeep == '[object String]' || aDeep == '[object Number]') {
+        if (a.valueOf() != b.valueOf()) return false
+    }
+    if (aDeep == '[object RegExp]' || aDeep == '[object Date]' || aDeep == '[object Error]') {
+        if (a.toString() != b.toString()) return false;
+    }
+    if (aDeep == '[object Function]' && a.toString() != b.toString()) return false;
+    var aKeys = Object.keys(a);
+    var bKeys = Object.keys(b);
+    if (aKeys.length != bKeys.length) return false;
+    if (!aKeys.every(function(key) { return b.hasOwnProperty(key) })) return false;
+    return aKeys.every(function(key) {
+        return deepEqual(a[key], b[key])
+    });
 
 
-// var a = {
-//     string: 'Vasya',
-//     number: 30,
-//     boolean: true,
-//     undefined: undefined,
-//     null: null,
-//     array: [1, 2, 3],
-//     object: {
-//         string2: 'Petrov',
-//         object2: {
-//             array2: [{}, {}]
-//         },
-//         object3: {}
-//     },
-//     method: function() {
-//         alert('Hello');
-//     }
-// };
-// var b = {
-//     string: 'Vasya',
-//     number: 30,
-//     boolean: true,
-//     undefined: undefined,
-//     null: null,
-//     array: [1, 2, 3, ],
-//     object: {
-//         string2: 'Petrov',
-//         object2: {
-//             array2: [{}, {}]
-//         },
-//         object3: {}
-//     },
-//     method: function() {
-//         alert('Hello');
-//     }
-// };
 
-// console.log(deepEqual(a, b));
+}
+
+
+var a = {
+    string: 'Vasya',
+    number: 30,
+    boolean: true,
+    undefined: undefined,
+    null: null,
+    array: [1, 2, 3],
+    object: {
+        string2: 'Petrov',
+        object2: {
+            array2: [{}, {}]
+        },
+        object3: {}
+    },
+    method: function() {
+        alert('Hello');
+    }
+};
+var b = {
+    string: 'Vasya',
+    number: 30,
+    boolean: true,
+    undefined: undefined,
+    null: null,
+    array: [1, 2, 3, ],
+    object: {
+        string2: 'Petrov',
+        object2: {
+            array2: [{}, {}]
+        },
+        object3: {}
+    },
+    method: function() {
+        alert('Hello');
+    }
+};
+
+console.log(deepEqual(a, b));
