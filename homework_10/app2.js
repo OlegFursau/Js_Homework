@@ -1,19 +1,18 @@
 function Animal(name) {
     this._name = name;
-    var self = this;
+
 
 
 }
 Animal.prototype.dailyNorm = function(amount) {
-    if (!arguments.length) return foodAmount;
+    if (!arguments.length) return this._formatFoodAmount();
     if (amount == 0 || amount < 50) throw new Error(this._name + ' будет очень голодный');
     if (amount > 100) throw new Error(this._name + ' объестся и лопнет! нельзя ему такое количество корма');
-    self.foodAmount = amount;
-    return this._formatFoodAmount(foodAmount);
+    _foodAmount = amount;;
 }
 
 Animal.prototype._formatFoodAmount = function() {
-    return self.foodAmount + ' гр';
+    return _foodAmount + ' гр';
 }
 Animal.prototype.feed = function() {
     console.log(`Насыпаем в миску ${this._name}a` + ' ' + this.dailyNorm() + ' корма.');
@@ -47,7 +46,7 @@ tigr.feed().stoke()
 
 // //     Протестировать работу функции можно на таком примере:
 
-var initialObj = {
+var initialObj = { //  fist object 
     string: 'Vasya',
     number: 30,
     boolean: true,
@@ -66,32 +65,42 @@ var initialObj = {
     }
 };
 
+/**********************************************************************************/
 
 
 function deepClone(obj) {
     if (obj === null) return null;
 
-    var clone = {};
-    for (var i in obj) {
-        if (Array.isArray(obj[i])) {
-            clone[i] = deepClone(obj[i]);
-            continue;
-        }
-        clone[i] = obj[i];
+    var elements;
+    var newObj = Array.isArray(obj) ? [] : {};
+    for (var value in obj) {
+        elements = obj[value];
+        newObj[value] = (typeof(elements) === 'object') ? deepClone(elements) : elements;
     }
-    return clone
+    return newObj;
+
 }
+/**********************************************************************************/
 
-var clonedObj = deepClone(initialObj);
+var clonedObj = deepClone(initialObj); /// second object
+var secondClonedObj = deepClone(initialObj) //thrid object
 
+// we are making change in second object
+clonedObj.object.object2.array2[1].name = 'Gosha';
+clonedObj.array.push(1);
+clonedObj.string = 'Grisha'
+clonedObj.number = 40;
 
-clonedObj.object.object2.array2[1].name = 'Vasya';
-initialObj.array.push(1);
+// we are making change in third object
 
-initialObj.number = 40;
+secondClonedObj.object.object2.array2[1].name = 'Gena';
+secondClonedObj.array.push(1, 2, 3, 9);
+secondClonedObj.string = 'Genacvali'
+secondClonedObj.number = 250;
 
 console.log(initialObj);
 console.log(clonedObj);
+console.log(secondClonedObj);
 
 
 
