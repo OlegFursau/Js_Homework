@@ -88,20 +88,18 @@ console.log(areAnagrams('кот', 'отко')); //false
 //     Написать функцию, которая будет разбивать массив на под-массивы определенной длины.
 /********************************************************************************************************************/
 
-function divideArr(arr) {
-    var sizeArr = 0;
+function divideArr(arr, sizeArr) {
+
     var newArr = [];
-    for (var i = 0; i < arr.length; i++) {
-        arr.length <= 4 ? sizeArr = 2 : sizeArr = 3;
-    }
-    arr.length == 4 ? newArr.push(arr.slice(0, sizeArr), arr.slice(sizeArr, sizeArr * 2)) :
+    arr.length == 0 ? [] : arr.length == 4 ? newArr.push(arr.slice(0, sizeArr), arr.slice(sizeArr, sizeArr * 2)) :
         newArr.push(arr.slice(0, sizeArr), arr.slice(sizeArr, sizeArr * 2), arr.slice(sizeArr * 2));
     return newArr
 }
 
 //     Функция должна работать следущим образом:
-console.log(divideArr([1, 2, 3, 4])); // [[1, 2], [3, 4]]
-console.log(divideArr([1, 2, 3, 4, 5, 6, 7, 8])); // [[1, 2, 3], [4, 5, 6], [7, 8]]
+console.log(divideArr([1, 2, 3, 4], 2)); // [[1, 2], [3, 4]]
+console.log(divideArr([1, 2, 3, 4, 5, 6, 7, 8], 3)); // [[1, 2, 3], [4, 5, 6], [7, 8]]
+console.log(divideArr([]));
 
 
 /********************************************************************************************************************/
