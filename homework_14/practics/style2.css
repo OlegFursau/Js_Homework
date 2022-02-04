@@ -1,0 +1,37 @@
+table {
+    margin: 50px auto;
+    border: 1px solid black;
+    width: 1000px;
+}
+
+th {
+    border: 1px solid black;
+}
+
+td,
+tr {
+    width: 100px;
+    height: 50px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+a {
+    margin: 10px;
+    font-size: 30px;
+    font-style: italic;
+    color: black;
+    text-decoration: none;
+}
+
+#addTab {
+    cursor: pointer;
+}
+
+input {
+    height: 50%;
+    max-width: 90%;
+    width: 100%;
+    margin: 0;
+    border: none;
+}
