@@ -1,0 +1,101 @@
+body {
+    background-color: black;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 100px auto 0 auto;
+}
+
+.botton {
+    display: flex;
+    justify-content: end;
+}
+
+.btn {
+    padding: 10px 50px;
+    background: chartreuse;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: yellow;
+    transition: .2s linear;
+}
+
+.link {
+    display: flex;
+    gap: 20px
+}
+
+.card {
+    margin: -30px;
+}
+
+.user {
+    background-color: rgb(138, 214, 115);
+    padding: 10px 30px;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+}
+
+.panel {
+    height: 250px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 20px 50px;
+    gap: 40px;
+}
+
+.panel_hiden {
+    display: none;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    margin: 80px;
+    display: block;
+}
+
+.white {
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+}
+
+.green {
+    background-color: green;
+    padding: 10px 30px;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+}
+
+.error {
+    padding: 30px 0;
+    margin: 100px auto;
+    background: rgb(255, 234, 49);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+svg {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+}
+
+h2 {
+    color: red;
+    font-size: 30px;
+    font-weight: 700;
+}
