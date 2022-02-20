@@ -25,14 +25,14 @@ body {
     cursor: pointer;
     padding: 10px 100px;
     border-radius: 10px;
-    background-color: indigo;
-    color: #fff;
+    background-color: rgb(251, 255, 28);
     font-size: 18px;
 }
 
 .btn:hover {
     background-color: rgb(51, 95, 7);
     transition: .2s linear;
+    color: #fff;
 }
 
 .timer {
@@ -83,7 +83,7 @@ span {
     max-width: 300px;
     margin: 0 auto;
     border-radius: 0px 10px;
-    background-color: rgb(56, 51, 51);
+    background-color: rgba(56, 51, 51, 0.5);
     text-align: center;
     color: #fff;
     font-size: 18px;
@@ -92,4 +92,26 @@ span {
 
 .hiden {
     display: none;
+}
+
+.red {
+    color: red;
+}
+
+.active {
+    background-color: red;
+    color: #fff;
+}
+
+.active:hover {
+    background-color: rgb(145, 14, 14);
+}
+
+.run {
+    background-color: blue;
+    color: #fff;
+}
+
+.run:hover {
+    background-color: rgb(6, 6, 158);
 }
